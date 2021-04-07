@@ -7,19 +7,28 @@ import { Node } from './model/node';
 })
 export class GraphService {
   public graph: Graph = new Graph();
+  public srcFile
   constructor() {
     console.log("inizialing graph service")
-    //this.getData();
-
    }
-
    getGraph(){
      return this.graph;
    }
-
-
    getData(){
-    fetch('./assets/graph/mohtoha.txt')
+    fetch("./assets/graph/input.txt")
+    .then(response => response.text())
+    .then(data => {
+      // Do something with your data
+      // console.log(data)
+      this.srcFile = data
+      console.log("READING : ",data)
+      this.getData2()
+
+    })
+   }
+
+   getData2(){
+    fetch('./assets/graph/'.concat(this.srcFile))
     .then(response => response.text())
     .then(data => {
       // Do something with your data
@@ -29,8 +38,8 @@ export class GraphService {
     });
    }
 
-
    parseData(data){
+    console.log("READING FILE")
     var splitted = data.split("\n");
     var len : number = +splitted[0]
     var nodes: Node[] = [];
@@ -38,19 +47,19 @@ export class GraphService {
     for(var i = 0;i<len;i++){
       var parsed : number[] = splitted[1+i].split(" ");
       nodes.push(new Node(parsed[1] ,parsed[0] ))
-      console.log(parsed[1],parsed[0])
+      // console.log(parsed[1],parsed[0])
     }
     var edges: Edge[] = [];
     for(var i = 0;i<len;i++){
       var parsed : number[] = splitted[1+len+i].split(" ");
-      for(var j = 0;j < i+1;j++){
+      for(var j = 0;j < len;j++){
         if(parsed[j] == 1){
           edges.push(new Edge(nodes[i],nodes[j]))
         }
       }
     }
-    console.log("nodes.length",nodes.length)
-    console.log("edges.length",edges.length)
+    console.log("nodes.length : ",nodes.length)
+    console.log("edges.length : ",edges.length)
     for(var j = 0;j < nodes.length;j++){
       this.graph.addNode(nodes[j]);
     }

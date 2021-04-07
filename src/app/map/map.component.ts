@@ -80,8 +80,8 @@ export class MapComponent implements OnInit {
       ],
       
       view: new View({
-        center:fromLonLat([107.60974070482834 ,  -6.94239174644882]),
-        zoom: 16
+        center:fromLonLat([ 107.65513873446967,-6.955782680199824]),
+        zoom: 15
       })
     });
     //renderGraphToMap()
@@ -95,13 +95,13 @@ export class MapComponent implements OnInit {
       var Coordinate = toLonLat(evt.coordinate); //coordinate openlayer to coordinate 
       var longitude = Coordinate[0];
       var latitude = Coordinate[1];
-      console.log("clicking at coor", longitude, ", ",latitude)
-      console.log(count)
+      //console.log("clicking at coor", longitude, ", ",latitude)
+      //console.log(count)
       
       if(count ==  0){
         SrcNode = new Node(longitude,latitude)
         count++;
-
+        this.distance = 0;
 
         var tempPoint = new Feature({
           geometry : new Point(fromLonLat([longitude,latitude]))
@@ -119,7 +119,7 @@ export class MapComponent implements OnInit {
         tempSource.addFeature(tempPoint);
 
         Src =  graph.getNearestNode(SrcNode)
-        this.distance += Node.getDistance(Src,SrcNode)
+        this.distance += Node.getDistance(Src,SrcNode)*50000
         //gambar garis pembantu
         var lineCoordinate1 = fromLonLat([Src.longitude,Src.latitude])
         var lineCoordinate2 = fromLonLat([SrcNode.longitude,SrcNode.latitude])
@@ -160,7 +160,7 @@ export class MapComponent implements OnInit {
         tempSource.addFeature(tempPoint);
 
         Dest =  graph.getNearestNode(DestNode)
-        this.distance += Node.getDistance(Dest,DestNode)
+        this.distance += Node.getDistance(Dest,DestNode)*50000
 
         //gambar garis pembantu
         var lineCoordinate1 = fromLonLat([Dest.longitude,Dest.latitude])
@@ -195,7 +195,7 @@ export class MapComponent implements OnInit {
             //visualizer hasil AStar
 
             var node2 = graph.AStarUtilSearchByID(curr)
-            this.distance += Node.getDistance(node1,node2)
+            this.distance += Node.getDistance(node1,node2)*50000
 
 
 
@@ -214,7 +214,6 @@ export class MapComponent implements OnInit {
               rotation : Math.atan2((node1.longitude - node2.longitude),(node1.latitude - node2.latitude))
               }))
             }));
-            console.log(arrowFeature)
             tempSource.addFeature(
               arrowFeature
             );
@@ -240,15 +239,14 @@ export class MapComponent implements OnInit {
             tempSource.addFeature(
               templineFeature
             );
-
-
             //end of visualizer
-
         }
+        console.log("DISTANCE : ",this.distance)
 
         
       }else if(count == 2){
         count = 0;
+        this.distance = 0
         tempSource.clear();
       }
 
@@ -267,7 +265,7 @@ export class MapComponent implements OnInit {
     
     
     function renderGraphToMap(){
-      console.log("rendering")
+      //console.log("rendering")
       GraphFeature =[]
       var nodes = graph.getNodes();
       var edges = graph.getEdges();

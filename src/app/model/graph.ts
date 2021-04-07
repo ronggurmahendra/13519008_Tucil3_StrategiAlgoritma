@@ -6,10 +6,12 @@ import { TmplAstTemplate } from '@angular/compiler';
 export class Graph {
     nodes : Node[];
     edges  : Edge[];
+    distance : number
 
     constructor(){
         this.nodes = []
         this.edges = [];
+        this.distance = 0;
     }
 
     addNode(node : Node){
@@ -89,6 +91,8 @@ export class Graph {
 
 
     AStar(Src : Node, Dest : Node){
+        console.log("CALLING")
+        
         if(Src == Dest){
             console.log("SELECT DIFFERENT NODE")
             
@@ -96,7 +100,7 @@ export class Graph {
         }
 
 
-        console.log("calling AStar")
+        
         this.AStarUtilInit();
         var found = false;
         Src.currDistance = 0;
@@ -138,25 +142,22 @@ export class Graph {
                 break;
             }
         }
-        if(found){
-            console.log("printing Route")
-            var curr = Dest.id;
-            while(curr != Src.id){
-                console.log("<<",curr)
-                var temp = this.AStarUtilSearchByID(curr)
-                
-                curr = temp.IDPrev
-            }
-            console.log("<<",curr)
+            // if(found){
+            //     console.log("printing Route")
+            //     var curr = Dest.id;
+            //     while(curr != Src.id){
+            //         console.log("<<",curr)
+            //         var temp = this.AStarUtilSearchByID(curr)
+                    
+            //         curr = temp.IDPrev
+            //     }
+            //     console.log("<<",curr)
+            // }else{
+            //     console.log("RouteNotFound")
+            // }
 
 
-
-        }else{
-            console.log("RouteNotFound")
-        }
-
-
-        console.log("calling Done")
+        console.log("A* Done")
     }
 
 
