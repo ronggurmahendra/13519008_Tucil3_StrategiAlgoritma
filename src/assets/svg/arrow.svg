@@ -1,0 +1,13 @@
+            <svg id="aksan" data-name="aksan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 735.4 73">
+                <defs>
+                    <style>
+                        .cls-1 { fill: #ffd31d; }
+                    </style>
+                </defs>
+                    <polygon class="cls-1" points="367.81 0.79 472.38 70.72 367.29 27.29 261.62 72.5 261.11 72.5 367.81 0.79"/>
+                    <path d="M716.81,421.39l100.1,66.94-46-19-54.23-22.41-.39-.17-.39.17-54,23.08-48,20.56,102.91-69.16m-.28-1.39v.38L608.46,493h2.26l51.62-22.08,53.95-23.08,54.24,22.41,53.84,22.26h.57L716.53,420Z" transform="translate(-349 -420)"/>
+                    <rect class="cls-1" x="0.5" y="0.5" width="173.39" height="10.86"/>
+                    <path d="M522.39,421v9.86H350V421H522.39m1-1H349v11.86H523.39V420Z" transform="translate(-349 -420)"/>
+                    <rect class="cls-1" x="561.51" y="0.5" width="173.39" height="10.86"/>
+                    <path d="M1083.4,421v9.86H911V421H1083.4m1-1H910v11.86H1084.4V420Z" transform="translate(-349 -420)"/>
+            </svg>

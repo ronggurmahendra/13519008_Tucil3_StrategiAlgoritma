@@ -1,0 +1,8 @@
+            <svg id="sky" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160">
+                <defs>
+                    <style>
+                        .polymorph{ fill: #8CABEE; }
+                    </style>
+                </defs>
+                <polygon class="polymorph" points="320 160 0 160 0 0 320 0 320 160"/>
+            </svg>
