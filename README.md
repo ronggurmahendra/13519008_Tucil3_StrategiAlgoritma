@@ -1,28 +1,42 @@
-# Tucil3
+# Tucil 3 
+> Implementasi Algoritma A* untuk Menentukan Lintasan Terpendek
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Author](#author)
 
-## Development server
+## General info
+program ini melakukan pencarian rute terdekat menggunakan graph dan menvisualisasikanya di peta
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies
+* node js - version v12.16.1
+* Angular CLI - version 9.0.7
+* electron js
+* open layer
 
-## Code scaffolding
+## Setup
+1. pastikan semua technologies sudah di install 
+2. masuk ke directory src/13519008_Tucil3_StrategiAlgoritma/
+3. lakukan perintah npm i intuk meninstall dependency dan library
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How To Use
+Web : 
+1. pastikan setup sudah dilakukan tanpa error
+2. pindahkan file graph yang ingin diinput pada directory src/13519008_Tucil3_StrategiAlgoritma/src/assets/graph
+3. ubah src/13519008_Tucil3_StrategiAlgoritma/src/assets/graph/input.txt menjadi nama file yang ingin diinput co : "itb.txt"
+4. lakukan perintah 'ng serve --open' pada directory src/13519008_Tucil3_StrategiAlgoritma/
+5. tunggu sebentar untuk map merender graph
+6. tekan titik dimanapun pada layar untuk memilih titik asal dan titik tujuan
+7. untuk melihat distance buka console pada web dengan cara  CTRL + SHIFT + I atau  F12
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Status
+Project is finished
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-"# 13519008_Tucil3_StrategiAlgoritma" 
+## Author
+Ronggur Mahendra - 13519008
