@@ -1,6 +1,5 @@
 import { Node } from './node';
 import { Edge } from './edge';
-import {RouteElmt} from './routeElmt'
 import { TmplAstTemplate } from '@angular/compiler';
 
 export class Graph {

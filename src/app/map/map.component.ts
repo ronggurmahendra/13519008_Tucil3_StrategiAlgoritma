@@ -80,7 +80,7 @@ export class MapComponent implements OnInit {
       ],
       
       view: new View({
-        center:fromLonLat([ 107.65513873446967,-6.955782680199824]),
+        center:fromLonLat([ 107.62733425069028,-6.909636049855755]), 
         zoom: 15
       })
     });
